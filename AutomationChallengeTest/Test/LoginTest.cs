@@ -29,7 +29,8 @@ namespace AutomationChallengeTest
         public void LoginInvalidUser()
         {
             LoginPage login = new LoginPage(_driver);
-            login.LoginWithAnInvalidCredential();
+            var errorMessage = login.LoginWithAnInvalidCredential();
+            Assert.Equal("Epic sadface: Username and password do not match any user in this service", errorMessage);
         }
     }
 }

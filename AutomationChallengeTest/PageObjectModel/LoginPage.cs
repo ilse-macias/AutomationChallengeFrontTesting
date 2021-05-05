@@ -28,13 +28,15 @@ namespace AutomationChallengeTest
             loginButton.Click();
         }
 
-        public void LoginWithAnInvalidCredential()
+        public string LoginWithAnInvalidCredential()
         {
-            errorMessage = _driver.FindElement(By.XPath("//div[@class='error-message-container']"));
+            
             usernameField.SendKeys("standard_user");
             passwordField.SendKeys("secret_saucex");
             loginButton.Click();
-            Console.WriteLine(errorMessage);
+            errorMessage = _driver.FindElement(By.XPath("//*[@id='login_button_container']/div/form/div[3]/h3"));
+
+            return errorMessage.Text;
         }
     }
 }
