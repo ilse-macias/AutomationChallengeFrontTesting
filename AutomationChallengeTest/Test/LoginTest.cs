@@ -19,11 +19,17 @@ namespace AutomationChallengeTest
 
       
         [Fact]
-        public void Test1()
+        public void LoginValidUser()
         {
-            System.Console.WriteLine("Hello!");
             LoginPage login = new LoginPage(_driver);
             login.LoginWithAValidCredential();
+        }
+
+        [Fact]
+        public void LoginInvalidUser()
+        {
+            LoginPage login = new LoginPage(_driver);
+            login.LoginWithAnInvalidCredential();
         }
     }
 }
