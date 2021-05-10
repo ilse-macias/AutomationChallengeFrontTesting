@@ -26,5 +26,15 @@ namespace AutomationChallengeFrontEndTesting.Test
             InventoryPage inventoryPage = new InventoryPage(_driver);
             inventoryPage.ClickOnLogout();
         }
+
+        [Fact]
+        public void SortProductByPriceDescending()
+        {
+            LoginPage login = new LoginPage(_driver);
+            login.LoginWithAValidCredential();
+
+            InventoryPage inventory = new InventoryPage(_driver);
+            inventory.SortProducts();
+        }
     }
 }

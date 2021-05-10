@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System.Threading;
 
 namespace AutomationChallengeFrontEndTesting
@@ -8,6 +9,7 @@ namespace AutomationChallengeFrontEndTesting
         private IWebDriver _driver;
         private IWebElement _burgerMenuIcon;
         private IWebElement _logoutLink;
+        private IWebElement _sortProduct;
 
         public InventoryPage(IWebDriver _driver)
         {
@@ -25,6 +27,15 @@ namespace AutomationChallengeFrontEndTesting
            _logoutLink = _driver.FindElement(By.Id("logout_sidebar_link"));
            _logoutLink.Click();
            
+        }
+
+        public void SortProducts()
+        {
+            _sortProduct = _driver.FindElement(By.ClassName("product_sort_container"));
+
+            SelectElement selectElement = new SelectElement(_sortProduct);
+            selectElement.SelectByValue("hilo");
+            Thread.Sleep(5000);
         }
     }
 }
