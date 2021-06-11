@@ -11,6 +11,8 @@ namespace AutomationChallengeFrontEndTesting
         private IWebElement _burgerMenuIcon;
         private IWebElement _logoutLink;
         private IWebElement _sortProduct;
+        private IWebElement _cartIcon;
+
         private IList<IWebElement> _AddToCart;
         private IList<IWebElement> _ProductPrice;
 
@@ -50,6 +52,13 @@ namespace AutomationChallengeFrontEndTesting
             {
                 item.Click();
             }
+        }
+
+        public void ClickOnCartIcon()
+        {
+            _cartIcon = _driver.FindElement(By.ClassName("shopping_cart_link"));
+            _cartIcon.Click();
+            Thread.Sleep(5000);
         }
 
         public List<InventoryItem> AddProductsToCart()
