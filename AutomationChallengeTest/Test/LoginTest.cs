@@ -23,6 +23,7 @@ namespace AutomationChallengeTest
         {
             LoginPage login = new LoginPage(_driver);
             login.LoginWithAValidCredential();
+            //Assert.Equal("Products", confirmation);
         }
 
         [Fact]

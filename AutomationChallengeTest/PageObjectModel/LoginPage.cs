@@ -12,6 +12,7 @@ namespace AutomationChallengeTest
         protected IWebElement passwordField;
         protected IWebElement loginButton;
         protected IWebElement errorMessage;
+        protected IWebElement confirmation;
 
         public LoginPage(IWebDriver _driver)
         {
@@ -26,6 +27,9 @@ namespace AutomationChallengeTest
             usernameField.SendKeys("standard_user");
             passwordField.SendKeys("secret_sauce");
             loginButton.Click();
+           // confirmation = _driver.FindElement(By.XPath("//*[@id='header_container']/div[2]/span"));
+
+           //return confirmation.Text;
         }
 
         public string LoginWithAnInvalidCredential()

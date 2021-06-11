@@ -36,5 +36,19 @@ namespace AutomationChallengeFrontEndTesting.Test
             InventoryPage inventory = new InventoryPage(_driver);
             inventory.SortProducts();
         }
+
+        [Fact]
+        public void AddMultipleItems()
+        {
+            LoginPage login = new LoginPage(_driver);
+            login.LoginWithAValidCredential();
+
+            InventoryPage inventory = new InventoryPage(_driver);
+            var inventoryItems = inventory.AddProductsToCart();
+
+            var badgeCount = inventory.GetCartCount();
+
+            Assert.Equal(badgeCount, inventoryItems.Count);
+        }
     }
 }
