@@ -32,6 +32,12 @@ namespace AutomationChallengeFrontEndTesting.Test
 
             CartPage cart = new CartPage(_driver);
             cart.ClickOnCheckOutButton();
+
+            CheckOutYourInformationPage checkout = new CheckOutYourInformationPage(_driver);
+            checkout.FillOutTheInformation("Name", "Last", "122345");
+
+            CheckOutOverview checkoutTwo = new CheckOutOverview(_driver);
+            checkoutTwo.CheckOutLastStep();
         }
         
        

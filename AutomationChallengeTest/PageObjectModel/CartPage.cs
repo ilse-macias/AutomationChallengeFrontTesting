@@ -23,7 +23,5 @@ namespace AutomationChallengeFrontEndTesting
             checkoutButton.Click();
             Thread.Sleep(3000);
         }
-
-
     }
 }
